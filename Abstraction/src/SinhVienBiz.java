@@ -12,5 +12,4 @@ public class SinhVienBiz extends SinhVienTechMaster {
     public double getPoint() {
         return (2 * pointMarketing + pointSales) / 3;
     }
-
 }
