@@ -1,3 +1,5 @@
+import java.time.LocalDate;
+
 public class Patient extends Person{
     private int id;
     private String date;
