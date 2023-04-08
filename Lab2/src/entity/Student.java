@@ -1,6 +1,4 @@
-package Entity;
-
-import Handle.StudentHandle;
+package entity;
 
 public class Student {
     private static int autId;

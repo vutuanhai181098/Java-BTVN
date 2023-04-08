@@ -1,6 +1,6 @@
-package Handle;
+package handle;
 
-import Entity.Student;
+import entity.Student;
 
 import java.util.Scanner;
 
@@ -21,8 +21,7 @@ public class StudentHandle {
 
     //    Average score
     public double scoreAvg(Student student) {
-        double scoreAvg = (student.getScoreMath() + student.getScorePhysic() + student.getScoreChemistry()) / 3;
-        return Math.ceil(scoreAvg * 100) / 100;
+        return (student.getScoreMath() + student.getScorePhysic() + student.getScoreChemistry()) / 3;
     }
 
     //  Classify
@@ -69,6 +68,6 @@ public class StudentHandle {
         double percentageA = ((double) countA / students.length) * 100;
         double percentageB = ((double) countB / students.length) * 100;
         double percentageC = ((double) countC / students.length) * 100;
-        return "Sinh viên xếp loại A có: " + (Math.ceil(percentageA * 100) / 100) + "%, xếp loại B: " + (Math.ceil(percentageB * 100) / 100) + "%, xếp loại C: " + (Math.ceil(percentageC * 100) / 100) + "%.";
+        return "Sinh viên xếp loại A có: " + percentageA + "%, xếp loại B: " + percentageB + "%, xếp loại C: " + percentageC + "%.";
     }
 }

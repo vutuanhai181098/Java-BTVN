@@ -1,5 +1,5 @@
-import Entity.Student;
-import Handle.StudentHandle;
+import entity.Student;
+import handle.StudentHandle;
 
 import java.util.Scanner;
 
