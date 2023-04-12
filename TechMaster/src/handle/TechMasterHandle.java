@@ -18,7 +18,7 @@ public class TechMasterHandle {
         Person teacher = personHandle.createPerson(scanner);
         System.out.println("3. Nhập thông tin cho lớp học: ");
         ClassroomHandle classroomHandle = new ClassroomHandle();
-        TechMaster techMaster = new TechMaster(manageClass, teacher, classroomHandle.createClasroom(scanner, students));
+        TechMaster techMaster = new TechMaster(manageClass, teacher, classroomHandle.createClassroom(scanner, students));
         return techMaster;
     }
     public void techMaster(Scanner scanner, ArrayList<Student> students, StudentHandle studentHandle) {
