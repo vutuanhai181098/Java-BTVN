@@ -12,6 +12,11 @@ public class Classroom {
     }
 
     public String toString() {
-        return "Môn học: " + subject + "\nHọc viên:\n" + students.toString();
+        String string = "";
+        for (Student stu : students
+        ) {
+            string += stu + "\n";
+        }
+        return "Môn học: " + subject + "\nHọc viên:\n" + string;
     }
 }

@@ -7,6 +7,7 @@ public class TechMaster {
     private Person teacher;
     private Classroom classroom;
 
+
     public TechMaster(Person manageClass, Person teacher, Classroom classroom) {
         this.manageClass = manageClass;
         this.teacher = teacher;
