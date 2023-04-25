@@ -19,14 +19,23 @@ public class MenuControl {
                 System.out.println("Thêm nhân viên thành công!");
                 break;
             case 2:
-                Employee employee1 = employeeHandle.findById(scanner, employees);
-                System.out.println(employee1);
-                subMenuControl(scanner, employee1);
-                System.out.println("Thay đổi thành công!");
+                Employee employee = employeeHandle.findById(scanner, employees);
+                if(employee != null) {
+                    System.out.println(employee);
+                    subMenuControl(scanner, employee);
+                    System.out.println("Thay đổi thành công!");
+                } else {
+                    System.out.println("Không tìm thấy nhân viên");
+                }
                 break;
             case 3:
-                employees.remove(employeeHandle.findById(scanner, employees));
-                System.out.println("Đã xóa thành công!");
+                Employee employee1 = employeeHandle.findById(scanner, employees);
+                if(employee1 != null){
+                    employees.remove(employeeHandle.findById(scanner, employees));
+                    System.out.println("Đã xóa thành công!");
+                } else {
+                    System.out.println("Không tìm thấy nhân viên");
+                }
                 break;
         }
     }
