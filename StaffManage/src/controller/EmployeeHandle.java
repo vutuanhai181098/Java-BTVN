@@ -102,13 +102,18 @@ public class EmployeeHandle {
     }
 
     public void findBySalary(Scanner scanner, ArrayList<Employee> employees) {
-        System.out.print("Bạn cần tìm nhân viên có mức lương dưới: ");
+        boolean check = false;
+        System.out.print("Bạn cần tìm nhân viên có thu nhập dưới: ");
         double salary = Double.parseDouble(scanner.nextLine());
         for (Employee employee : employees
         ) {
             if (employee.caculateIncome() <= salary) {
                 System.out.println(employee);
+                check = true;
             }
+        }
+        if (!check) {
+            System.out.println("Không tim thấy nhân viên có thu nhập dưới: " + salary);
         }
     }
 
