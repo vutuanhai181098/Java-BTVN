@@ -12,7 +12,11 @@ public class Main {
         Index index = new Index();
         IndexControl indexControl = new IndexControl();
         do {
-            indexControl.indexControl(index.index(scanner), employees, scanner);
+            try{
+                indexControl.indexControl(index.index(scanner), employees, scanner);
+            } catch (NumberFormatException ex){
+                System.out.println("Nhập sai định dạng dữ liệu");
+            }
         } while (true);
 
     }

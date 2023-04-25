@@ -9,34 +9,38 @@ import java.util.Scanner;
 
 public class EmployeeHandle {
     public ArrayList<Employee> createListEmployee(Scanner scanner, ArrayList<Employee> employees) {
-        System.out.print("Nhập số lượng nhân viên cần thêm: ");
-        int n = Integer.parseInt(scanner.nextLine());
-        for (int i = 0; i < n; i++) {
-            System.out.println("Nhập thông tin cho nhân viên thứ " + (i + 1) + ": ");
-            System.out.print("-Tên nhân viên: ");
-            String name = scanner.nextLine();
-            System.out.print("-Lương cơ bản: ");
-            double salary = Double.parseDouble(scanner.nextLine());
-            System.out.println("-Chức vụ: ");
-            System.out.println("1. Nhân viên hành chính\t2. Nhân viên tiếp thị\t3. Trưởng phòng");
-            int select = Integer.parseInt(scanner.nextLine());
-            switch (select) {
-                case 1:
-                    employees.add(new Administrative(name, salary));
-                    break;
-                case 2:
-                    System.out.print("-Doanh số bán hàng: ");
-                    double revenue = Double.parseDouble(scanner.nextLine());
-                    System.out.print("-Tỉ lệ hoa hồng: ");
-                    double bonus = Double.parseDouble(scanner.nextLine());
-                    employees.add(new MarketingStaff(name, salary, revenue, bonus));
-                    break;
-                case 3:
-                    System.out.print("-Lương trách nhiệm: ");
-                    double salaryResponsibility = Double.parseDouble(scanner.nextLine());
-                    employees.add(new Manager(name, salary, salaryResponsibility));
-                    break;
+        try{
+            System.out.print("Nhập số lượng nhân viên cần thêm: ");
+            int n = Integer.parseInt(scanner.nextLine());
+            for (int i = 0; i < n; i++) {
+                System.out.println("Nhập thông tin cho nhân viên thứ " + (i + 1) + ": ");
+                System.out.print("-Tên nhân viên: ");
+                String name = scanner.nextLine();
+                System.out.print("-Lương cơ bản: ");
+                double salary = Double.parseDouble(scanner.nextLine());
+                System.out.println("-Chức vụ: ");
+                System.out.println("1. Nhân viên hành chính\t2. Nhân viên tiếp thị\t3. Trưởng phòng");
+                int select = Integer.parseInt(scanner.nextLine());
+                switch (select) {
+                    case 1:
+                        employees.add(new Administrative(name, salary));
+                        break;
+                    case 2:
+                        System.out.print("-Doanh số bán hàng: ");
+                        double revenue = Double.parseDouble(scanner.nextLine());
+                        System.out.print("-Tỉ lệ hoa hồng: ");
+                        double bonus = Double.parseDouble(scanner.nextLine());
+                        employees.add(new MarketingStaff(name, salary, revenue, bonus));
+                        break;
+                    case 3:
+                        System.out.print("-Lương trách nhiệm: ");
+                        double salaryResponsibility = Double.parseDouble(scanner.nextLine());
+                        employees.add(new Manager(name, salary, salaryResponsibility));
+                        break;
+                }
             }
+        } catch (NumberFormatException ex){
+            System.out.println("Nhập sai định dạng. Yêu cầu nhập lại");
         }
         return employees;
     }
