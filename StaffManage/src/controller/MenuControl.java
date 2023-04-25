@@ -16,11 +16,10 @@ public class MenuControl {
         switch (select) {
             case 1:
                 employeeHandle.createListEmployee(scanner, employees);
-                System.out.println("Thêm nhân viên thành công!");
                 break;
             case 2:
                 Employee employee = employeeHandle.findById(scanner, employees);
-                if(employee != null) {
+                if (employee != null) {
                     System.out.println(employee);
                     subMenuControl(scanner, employee);
                     System.out.println("Thay đổi thành công!");
@@ -30,7 +29,7 @@ public class MenuControl {
                 break;
             case 3:
                 Employee employee1 = employeeHandle.findById(scanner, employees);
-                if(employee1 != null){
+                if (employee1 != null) {
                     System.out.println(employee1);
                     System.out.println("Đã xóa thành công!");
                 } else {

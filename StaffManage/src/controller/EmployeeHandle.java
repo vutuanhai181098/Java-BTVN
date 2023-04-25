@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class EmployeeHandle {
     public ArrayList<Employee> createListEmployee(Scanner scanner, ArrayList<Employee> employees) {
-        try{
+        try {
             System.out.print("Nhập số lượng nhân viên cần thêm: ");
             int n = Integer.parseInt(scanner.nextLine());
             for (int i = 0; i < n; i++) {
@@ -39,7 +39,7 @@ public class EmployeeHandle {
                         break;
                 }
             }
-        } catch (NumberFormatException ex){
+        } catch (NumberFormatException ex) {
             System.out.println("Nhập sai định dạng. Yêu cầu nhập lại");
         }
         return employees;
@@ -52,7 +52,7 @@ public class EmployeeHandle {
             System.out.println(employee);
             check = true;
         }
-        if(!check) System.out.println("Danh sách nhân viên trống.");
+        if (!check) System.out.println("Danh sách nhân viên trống.");
     }
 
     public Employee findById(Scanner scanner, ArrayList<Employee> employees) {
@@ -126,16 +126,21 @@ public class EmployeeHandle {
         Collections.sort(employees, new Comparator<Employee>() {
             @Override
             public int compare(Employee o1, Employee o2) {
-                return (int) (o1.caculateIncome() - o2.caculateIncome());
+                return (int) (o2.caculateIncome() - o1.caculateIncome());
             }
         });
         return employees;
     }
-    public void displayTopSalary(ArrayList<Employee> employees){
-        ArrayList<Employee> employees1 = sortBySalary(employees);
-        for (int i = employees1.size(); i >= 0; i++) {
-            if (i == employees1.size()-6) break;
-            System.out.println(employees1.get(i));
+
+    public void displayTopSalary(ArrayList<Employee> employees) {
+        try {
+            ArrayList<Employee> employees1 = sortBySalary(employees);
+            for (int i = 0; i <= employees1.size(); i++) {
+                if (i == 5) break;
+                System.out.println(employees1.get(i));
+            }
+        } catch (IndexOutOfBoundsException ex) {
+            System.out.println("Không đủ 5 nhân viên");
         }
     }
 }

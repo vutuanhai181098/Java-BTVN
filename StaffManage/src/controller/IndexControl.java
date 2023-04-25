@@ -36,7 +36,7 @@ public class IndexControl {
                 employeeHandle.displayTopSalary(employees);
                 break;
             case 0:
-                return;
+                System.exit(0);
         }
     }
 }
