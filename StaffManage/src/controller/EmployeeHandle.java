@@ -133,8 +133,8 @@ public class EmployeeHandle {
     }
     public void displayTopSalary(ArrayList<Employee> employees){
         ArrayList<Employee> employees1 = sortBySalary(employees);
-        for (int i = 0; i < employees1.size(); i++) {
-            if (i == 5) break;
+        for (int i = employees1.size(); i >= 0; i++) {
+            if (i == employees1.size()-6) break;
             System.out.println(employees1.get(i));
         }
     }

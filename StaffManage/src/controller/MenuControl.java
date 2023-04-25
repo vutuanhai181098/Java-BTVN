@@ -31,7 +31,7 @@ public class MenuControl {
             case 3:
                 Employee employee1 = employeeHandle.findById(scanner, employees);
                 if(employee1 != null){
-                    employees.remove(employeeHandle.findById(scanner, employees));
+                    System.out.println(employee1);
                     System.out.println("Đã xóa thành công!");
                 } else {
                     System.out.println("Không tìm thấy nhân viên");
